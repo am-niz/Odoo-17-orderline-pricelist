@@ -1,0 +1,31 @@
+<odoo>
+    <record id="pricelist_wizard_form_view" model="ir.ui.view">
+        <field name="name">pricelist.wizard.form</field>
+        <field name="model">pricelist.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Select Pricelist">
+                <sheet>
+                    <group>
+                        <field name="sale_order_line_id" invisible="1"/>
+                        <field name="product_id" readonly="1" string="Product"/>
+                        <field name="selected_pricelist_id" readonly="1" string="Current Pricelist"/>
+                    </group>
+                    <group>
+                        <field name="pricelist_ids" string="Available Pricelists">
+                            <tree editable="bottom">
+                                <field name="selected"/>
+                                <field name="pricelist_id" string="Pricelist"/>
+                            </tree>
+                        </field>
+                    </group>
+                </sheet>
+                <footer>
+                    <!-- Primary action button with a clear label -->
+                    <button string="Apply" type="object" name="apply_pricelist" class="btn-primary oe_highlight"/>
+                    <!-- Cancel button with a secondary style -->
+                    <button string="Cancel" special="cancel" class="btn-secondary"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+</odoo>

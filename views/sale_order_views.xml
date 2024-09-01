@@ -1,0 +1,18 @@
+<odoo>
+    <record id="sale_order_form_inherit" model="ir.ui.view">
+        <field name="name">sale.order.form.inherit.pricelist.button</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='order_line']/tree/field[last()]" position="after">
+                <button name="price_list_apply"
+                        type="object"
+                        string="Pricelists"
+                        class="btn btn-primary btn-sm"
+                        title="Select and apply a pricelist to this order line"
+                        icon="fa-tags"
+                        groups="sales_team.group_sale_manager"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
