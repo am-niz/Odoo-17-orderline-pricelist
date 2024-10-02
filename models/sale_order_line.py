@@ -11,7 +11,7 @@ class SaleOrderLine(models.Model):
             'type': 'ir.actions.act_window',
             'res_model': 'pricelist.wizard',
             'view_mode': 'form',
-            'view_id': self.env.ref('order_line_pricelist.pricelist_wizard_form_view').id,
+            # 'view_id': self.env.ref('order_line_pricelist.pricelist_wizard_form_view').id
             'target': 'new',
             'context': {'default_sale_order_line_id': self.id},
         }

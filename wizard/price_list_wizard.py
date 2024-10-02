@@ -33,7 +33,7 @@ class PricelistWizard(models.TransientModel):
     def default_get(self, fields_list):
         res = super(PricelistWizard, self).default_get(fields_list)
         sale_order_line_id = self.env.context.get('default_sale_order_line_id')
-        sale_order_line = self.env['sale.order.line'].browse(sale_order_line_id)
+        sale_order_line = self.env['sale.order.line'].browse(sale_order_line_id)  # To access the related fields like product_id and product_tmpl_id, you need to browse the ID to get the corresponding recordset first
         product_tmpl_id = sale_order_line.product_id.product_tmpl_id.id
 
         pricelist_lines = []
